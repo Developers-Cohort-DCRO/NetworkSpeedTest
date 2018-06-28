@@ -9,20 +9,20 @@ import os.path
 
 #measure connection time to enterprise database
 connect_false = datetime.datetime.now()
-database = r"C:\Users\Park9205\Documents\ArcGIS\Projects\Network Speed Test\TestData.gdb"
+database = r"C:FILEPATH"
 connect_true = datetime.datetime.now()
 connect_time = connect_true - connect_false
 
 #declare paths to test layers
 #spot elevation points
-testLayer1 = r"C:\Users\Park9205\Documents\ArcGIS\Projects\Network Speed Test\TestData.gdb\Spot_Elevation_Points"
+testLayer1 = r"C:FILEPATH\Spot_Elevation_Points"
 #contour lines
-testLayer2 = r"C:\Users\Park9205\Documents\ArcGIS\Projects\Network Speed Test\TestData.gdb\Contour_Lines"
+testLayer2 = r"C:FILEPATH\Contour_Lines"
 #wetlands polygons
-testLayer3 = r"C:\Users\Park9205\Documents\ArcGIS\Projects\Network Speed Test\TestData.gdb\Wetlands_Polygons"
+testLayer3 = r"C:FILEPATH\Wetlands_Polygons"
 
 #prepare map document for data
-workspace = r"C:\Users\Park9205\Documents\ArcGIS\Projects\Network Speed Test\BlankMap.mxd"
+workspace = r"C:FILEPATH\BlankMap.mxd"
 workspaceActive = arcpy.mapping.MapDocument(workspace)
 dataframe = arcpy.mapping.ListDataFrames(workspaceActive)[0]
 
@@ -48,7 +48,7 @@ layer3_true = datetime.datetime.now()
 layer3_time = layer3_true - layer3_false
 
 #output results to .csv
-csv_path = 'C:\Users\Park9205\Documents\ArcGIS\Projects\Network Speed Test\Output Log.csv'
+csv_path = 'C:FILEPATH\Output Log.csv'
 
 #check for existence of output log
 file_exists =os.path.exists(csv_path)
